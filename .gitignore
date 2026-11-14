@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Build and distribution
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
+
+# Local databases
+*.sqlite3
+*.db
+
+# IDE settings
+.idea/
+.vscode/
+
+# Operating system
+.DS_Store
+Thumbs.db
