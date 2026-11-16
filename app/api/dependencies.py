@@ -8,6 +8,7 @@ from sqlalchemy.orm import Session
 from app.core.security import decode_access_token
 from app.db.session import get_db
 from app.models.user import User
+from app.services.task import TaskService
 from app.services.user import UserService
 
 bearer_scheme = HTTPBearer(auto_error=False)
@@ -18,6 +19,18 @@ def get_user_service(
 ) -> UserService:
     return UserService(db)
 
+
+
+def get_task_service(
+    db: Annotated[Session, Depends(get_db)],
+) -> TaskService:
+    return TaskService(db)
+
+
+TaskServiceDep = Annotated[
+    TaskService,
+    Depends(get_task_service),
+]
 
 UserServiceDep = Annotated[
     UserService,
